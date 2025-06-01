@@ -3,6 +3,13 @@ name: Build and Release YTMusicUltimate
 on:
   workflow_dispatch:
     inputs: 
+      enable_youpip:
+        description: "Integrate rynd"
+        type: boolean
+        required: true
+        default: true
+
+    
       ipa_url:
         description: "URL to the decrypted IPA file"
         default: ""
