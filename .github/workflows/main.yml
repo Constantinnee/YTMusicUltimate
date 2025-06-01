@@ -3,7 +3,7 @@ name: Build and Release YTMusicUltimate
 on:
   workflow_dispatch:
     inputs: 
-      enable_youpip:
+      enable_rymd:
         description: "enable rynd"
         type: boolean
         required: true
@@ -113,7 +113,7 @@ jobs:
           THEOS: ${{ github.workspace }}/theos
 
          - name: Clone Return-YouTube-Dislikes
-        if: ${{ inputs.enable_ryd }}
+        if: ${{ inputs.enable_rymd }}
         run: |
           cd ${{ github.workspace }}
           git clone --quiet --depth=1 https://github.com/PoomSmart/Return-YouTube-Dislikes.git
