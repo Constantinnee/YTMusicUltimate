@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs: 
       enable_youpip:
-        description: "Integrate rynd"
+        description: "enable rynd"
         type: boolean
         required: true
         default: true
