@@ -142,6 +142,15 @@ jobs:
         id: download_youtube_music
         run: wget "${{ inputs.ipa_url }}" --no-verbose -O ${{ github.workspace }}/main/ytm.ipa
 
+        - name: Build Return-YouTube-Dislikes
+        if: ${{ inputs.enable_rymd }}
+        run: |
+          cd ${{ github.workspace }}/Return-YouTube-Music-Dislikes
+          make clean package DEBUG=0 FINALPACKAGE=1
+          mv packages/*.deb ${{ github.workspace }}/rymd.deb
+        env:
+          THEOS: ${{ github.workspace }}/theos
+
       - name: Build Tweak for Sideloading
         id: build_package
         run: |
